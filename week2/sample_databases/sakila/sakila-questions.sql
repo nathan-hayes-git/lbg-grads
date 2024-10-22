@@ -123,3 +123,29 @@ WHERE c.name = "Horror";
 SELECT first_name, last_name
 FROM staff
 WHERE staff_id = 2;
+
+-- Q21
+SELECT f.*
+FROM film AS f
+INNER JOIN film_actor AS fa
+ON f.film_id = fa.film_id
+INNER JOIN actor as a
+ON fa.actor_id = a.actor_id
+WHERE a.first_name = "Fred" AND a.last_name = "Costner";
+
+-- Q22
+SELECT DISTINCT COUNT(country.country)
+FROM country;
+
+-- Q23
+SELECT name 
+FROM language
+ORDER BY name DESC;
+
+-- Q24
+SELECT CONCAT(first_name, " ", last_name) AS full_name
+FROM actor
+WHERE last_name LIKE "%son"
+ORDER BY first_name;
+
+-- Q25
